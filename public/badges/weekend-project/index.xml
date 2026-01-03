@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Weekend-Project on Personal Projects Showcase</title>
+    <link>http://localhost:1313/badges/weekend-project/</link>
+    <description>Recent content in Weekend-Project on Personal Projects Showcase</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
+    <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
+    <copyright>Copy right and left</copyright>
+    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/badges/weekend-project/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AI Concierge</title>
+      <link>http://localhost:1313/projects/ai-concierge/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/projects/ai-concierge/</guid>
+      <description>So here&amp;rsquo;s a problem I never thought I&amp;rsquo;d automate away: figuring out what to do on weekends.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/ai-concierge/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

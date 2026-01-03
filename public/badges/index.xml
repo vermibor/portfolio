@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Badges on Personal Projects Showcase</title>
+    <link>http://localhost:1313/badges/</link>
+    <description>Recent content in Badges on Personal Projects Showcase</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
+    <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
+    <copyright>Copy right and left</copyright>
+    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/badges/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/badges/ai/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/ai/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/badges/automation/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/automation/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>N8n</title>
+      <link>http://localhost:1313/badges/n8n/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/n8n/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Weekend-Project</title>
+      <link>http://localhost:1313/badges/weekend-project/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/weekend-project/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Crypto</title>
+      <link>http://localhost:1313/badges/crypto/</link>
+      <pubDate>Sun, 25 May 2025 21:42:53 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/crypto/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Simple</title>
+      <link>http://localhost:1313/badges/simple/</link>
+      <pubDate>Sun, 25 May 2025 21:42:53 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/simple/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>DIY</title>
+      <link>http://localhost:1313/badges/diy/</link>
+      <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/diy/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>IoT</title>
+      <link>http://localhost:1313/badges/iot/</link>
+      <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/iot/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>RPi</title>
+      <link>http://localhost:1313/badges/rpi/</link>
+      <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/rpi/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Agents</title>
+      <link>http://localhost:1313/badges/agents/</link>
+      <pubDate>Sun, 25 May 2025 21:42:23 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/agents/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/badges/api/</link>
+      <pubDate>Sun, 25 May 2025 21:42:23 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/api/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

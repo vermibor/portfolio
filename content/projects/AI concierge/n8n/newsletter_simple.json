@@ -1,0 +1,218 @@
+{
+  "name": "newsletter_simple",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"preferences\": {\n    \"category\": [\n      \"outdoor\", \n      \"culture\", \n      \"festival\",\n      \"local\"\n    ] ,\n    \"max_cost_usd\": 50,\n    \"location\": \"SomeTown\",\n    \"country\": \"Scotland\",\n    \"radius\": \"25 km\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        832,
+        752
+      ],
+      "id": "42336d0c-8859-4aa8-a0af-6a73c3766f18",
+      "name": "Preferences"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You act as a personal concierge and advisor for a user about potential activities for upcomming weekend.\n\nYour task is to present a list of option of how to spend next weekend in a memorable and unique way. In order to provide a recommendation you need to search an internet in order to find interesting events and rank them taking into account user preferences and location. Provide a link to a source page for each event.\nPropose events that happen Friday to Sunday. Return around 4-6 proposals.\n\nUser location is {{ $('Preferences').item.json.preferences.location }}, {{ $('Preferences').item.json.preferences.country }}\n\nUser prefer below categories of activities:\n{{ $('Preferences').item.json.preferences.category }}\n\nActivity should be no more than {{ $('Preferences').item.json.preferences.radius }} away from user location. Maximum cost is {{ $('Preferences').item.json.preferences.max_cost_usd }} USD.\n\nCurrent date: {{ $json.date }}\n\nImportant: make sure all the recommended events are real and validate links before suggesting them. Do not ask follow up questions to user.\n\nWhen a recommendation is ready prepare an email body:\n1. Consolidate all recommendations into one email\n2. Create a nice pure HTML email body with recommendation. Make sure links are tagged correctly\n3. Send email using EMAIL_TOOL\n\nImportant: Send only one email.\n\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3,
+      "position": [
+        1232,
+        752
+      ],
+      "id": "f551af0e-8666-488d-8df0-a20eed22f0f5",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.send_to }}",
+        "subject": "={{ $json.subject }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.1,
+      "position": [
+        1408,
+        1008
+      ],
+      "id": "07a67257-64e1-4ab2-916b-e6999dcf3290",
+      "name": "EMAIL_TOOL",
+      "webhookId": "e05a0a89-358f-4021-b05b-61d9da612133",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "63Jyyg9twcSsgVJO",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                3
+              ],
+              "triggerAtHour": 6
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        544,
+        752
+      ],
+      "id": "99f0a60c-4a92-4186-ae42-85ac949113fd",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "model": "=openai/gpt-5-mini:online",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1216,
+        1024
+      ],
+      "id": "91ca39a4-2150-40fe-8b09-8d84117c94d2",
+      "name": "GPT5-mini online",
+      "credentials": {
+        "openRouterApi": {
+          "id": "uaBOtyyv8Kyn5bmf",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "04c052e4-0831-4cfc-adff-e3ae58f9786b",
+              "name": "date",
+              "value": "={{ $today.format(\"dd/LL/yyyy\") }}",
+              "type": "string"
+            },
+            {
+              "id": "276552c4-e632-4d70-8e19-a040fda8d1d7",
+              "name": "send_to",
+              "value": "my_email@email.com",
+              "type": "string"
+            },
+            {
+              "id": "5c1e059b-b599-4325-a050-6caed38baad9",
+              "name": "subject",
+              "value": "Weekend events recommendations",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1040,
+        752
+      ],
+      "id": "12ba041d-e4f8-4a84-934e-ce354305bbfc",
+      "name": "constants"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Preferences": {
+      "main": [
+        [
+          {
+            "node": "constants",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "EMAIL_TOOL": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Preferences",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT5-mini online": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "constants": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "saveManualExecutions": false,
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": 1800,
+    "availableInMCP": false,
+    "errorWorkflow": "0olTTXQ10e2arWsa"
+  },
+  "versionId": "d7ffef83-5464-4f05-8256-e25574e207e8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ad40adec569e15004ae6dc5cabbb87e8497c456c1b4ed9229780cd08a14f93a2"
+  },
+  "id": "NjWWIG8Is8rkleYe",
+  "tags": []
+}

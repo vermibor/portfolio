@@ -1,0 +1,13 @@
+{{ define "main" }}
+<h1 class="text-2xl font-bold mb-6">Badges</h1>
+<ul class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+  {{ range .Data.Terms.Alphabetical }}
+    <li>
+      <a href="{{ .Page.RelPermalink }}" class="block border border-sky-400 text-sky-400 px-4 py-2 rounded hover:bg-sky-400 hover:text-white transition">
+        {{ .Page.Title }} ({{ .Count }})
+      </a>
+    </li>
+  {{ end }}
+</ul>
+{{ end }}
+

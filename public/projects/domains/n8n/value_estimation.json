@@ -1,0 +1,756 @@
+{
+  "name": "value estimation",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "domain"
+            },
+            {
+              "name": "strategy"
+            },
+            {
+              "name": "keyword"
+            },
+            {
+              "name": "trend_score",
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1140,
+        420
+      ],
+      "id": "8408435a-d95b-4b51-8693-5793515c6deb",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "=999",
+        "contextWindowLength": 1
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -120,
+        660
+      ],
+      "id": "4a162809-422b-45c4-bea2-02b0100f039d",
+      "name": "Window Buffer Memory"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "options": {
+          "systemMessage": "={{ $json.system_message }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -240,
+        420
+      ],
+      "id": "879aa51e-1a9d-4d9a-9338-caf6a4a7517c",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-reasoner",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        660
+      ],
+      "id": "bca4a673-4d39-4fdd-916b-e9086396c501",
+      "name": "DeepSeek R1",
+      "credentials": {
+        "deepSeekApi": {
+          "id": "0N2eY3c2kc1zj6Su",
+          "name": "DeepSeek account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.output }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "Read a text and extract 'value' and 'range' from its content"
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        120,
+        420
+      ],
+      "id": "f53a9b98-12c8-4991-88fa-684089ee7454",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"value\": 100,\n\t\"range\": \"50-200\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        300,
+        660
+      ],
+      "id": "7d9fc48f-d849-49df-ac64-eabb377f982e",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatDeepSeek",
+      "typeVersion": 1,
+      "position": [
+        140,
+        660
+      ],
+      "id": "aa01017d-e1b9-4c4c-80dd-06c02a0bc6a1",
+      "name": "DeepSeek Chat Model",
+      "credentials": {
+        "deepSeekApi": {
+          "id": "0N2eY3c2kc1zj6Su",
+          "name": "DeepSeek account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ",
+          "mode": "list",
+          "cachedResultName": "domains",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Arkusz1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "domain": "={{ $('Edit Fields').item.json.domain }}",
+            "expected value": "={{ Math.floor($json.average_output_value) }}"
+          },
+          "matchingColumns": [
+            "domain"
+          ],
+          "schema": [
+            {
+              "id": "keyword",
+              "displayName": "keyword",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "domain",
+              "displayName": "domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "trend score",
+              "displayName": "trend score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "fit score",
+              "displayName": "fit score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "available",
+              "displayName": "available",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "registration cost",
+              "displayName": "registration cost",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "min years",
+              "displayName": "min years",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "renewal cost",
+              "displayName": "renewal cost",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "expected value",
+              "displayName": "expected value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ROI",
+              "displayName": "ROI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "strategy",
+              "displayName": "strategy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1100,
+        420
+      ],
+      "id": "ba0806f9-7158-489c-b92e-e91a348d9acb",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "84eyVFV4GuUZly7z",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "202d29e9-17ef-4659-bc0f-e88094260455",
+              "name": "=prompt",
+              "value": "=Provide value estimation in 12 months timeframe for domain: '{{ $json.domain }}' that aims at taking advantage of incrasing interest in keyword: '{{ $json.keyword }}'. Domain build strategy is : '{{ $json.strategy }}'. \n\nAssume that the webpage will have to be built from scratch, using only free open-source tools. Total budget for developing a webpage and marketing is 100$. This webpage will not generate any revenue. It will focus only on generating traffic to this webpage. Take into account only potential resell value in 12 months. Return a mid point of value estimation and range of 50% probability window\n\nTake into account the score of trend strenght that was estimated as: {{ $json.trend_score }} (in a 1-10 scale)",
+              "type": "string"
+            },
+            {
+              "id": "324127ec-9f38-4f30-9c0c-5ff88a9655e7",
+              "name": "system_message",
+              "value": "=You are an expert domain flipper and an SEO expert. Your task is to provide the most accurate estimation of a new domain which currently has no traffic but may have potential. Your time horizon is 12 months.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -600,
+        420
+      ],
+      "id": "6db94845-8103-4b8f-884c-186ec5ad202a",
+      "name": "prompt build"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "={{ $json.system_message }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b5cb355e-615d-4eea-a068-fabd15c16dbe",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.2,
+      "position": [
+        -80,
+        220
+      ],
+      "id": "6b2860ff-c686-4fb7-b30a-5f17cf6a0e32",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "JRU7Tp2pzzKIKImy",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "3463875",
+        "contextWindowLength": 1
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        80,
+        220
+      ],
+      "id": "cd3afdd9-0f07-4c0b-9596-a2f4f02859c0",
+      "name": "Window Buffer Memory1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "={{ $json.system_message }}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        -40,
+        940
+      ],
+      "id": "5b986b2c-2851-4904-9559-8fa174ae0f37",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "0578467",
+        "contextWindowLength": 1
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        80,
+        1180
+      ],
+      "id": "59b44bfe-c038-42da-bd57-a8fde672d9fb",
+      "name": "Window Buffer Memory2"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -120,
+        1140
+      ],
+      "id": "675dbc4c-b7d3-45f0-8368-a3f3f4147082",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "qUsMQk2UkySnDBhs",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "aggregation": "average",
+              "field": "=output.value"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [
+        940,
+        420
+      ],
+      "id": "2793166e-9907-4d58-b466-0a02881a7025",
+      "name": "Average"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        760,
+        420
+      ],
+      "id": "5e108336-f70e-4669-b127-93c05dd2fc98",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"value\": 100,\n\t\"range\": \"50-200\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        240,
+        240
+      ],
+      "id": "027767cb-f912-4ec1-a22c-e9481ebae5c8",
+      "name": "Structured Output Parser3"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"value\": 100,\n\t\"range\": \"50-200\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        260,
+        1140
+      ],
+      "id": "2be7ced7-fb20-4173-9c6d-45789acc6867",
+      "name": "Structured Output Parser4"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "prompt build",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek R1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DeepSeek Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "prompt build": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Average": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Average",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser3": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser4": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e7f03a14-a083-40bc-bba7-bff6e3eb661b",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ad40adec569e15004ae6dc5cabbb87e8497c456c1b4ed9229780cd08a14f93a2"
+  },
+  "id": "dXlAuNI6Zevj4KUL",
+  "tags": [
+    {
+      "createdAt": "2025-04-09T18:31:32.951Z",
+      "updatedAt": "2025-04-09T18:31:32.951Z",
+      "id": "At8yHoHPgHxzPg79",
+      "name": "new domain"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simple on Personal Projects Showcase</title>
+    <link>http://localhost:1313/badges/simple/</link>
+    <description>Recent content in Simple on Personal Projects Showcase</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
+    <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
+    <copyright>Copy right and left</copyright>
+    <lastBuildDate>Sun, 25 May 2025 21:42:53 +0200</lastBuildDate><atom:link href="http://localhost:1313/badges/simple/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Vibecoding</title>
+      <link>http://localhost:1313/projects/vibecoding/</link>
+      <pubDate>Sun, 25 May 2025 21:42:53 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/projects/vibecoding/</guid>
+      <description>🚀 My Journey into Vibe Coding: Building a Crypto Correlation Explorer # The Spark 💡 # Sometimes the best projects start with a simple question and an afternoon of pure coding flow.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/vibecoding/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

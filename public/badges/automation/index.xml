@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Personal Projects Showcase</title>
+    <link>http://localhost:1313/badges/automation/</link>
+    <description>Recent content in Automation on Personal Projects Showcase</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
+    <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
+    <copyright>Copy right and left</copyright>
+    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/badges/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AI Concierge</title>
+      <link>http://localhost:1313/projects/ai-concierge/</link>
+      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/projects/ai-concierge/</guid>
+      <description>So here&amp;rsquo;s a problem I never thought I&amp;rsquo;d automate away: figuring out what to do on weekends.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/ai-concierge/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>AI Domain Advisor</title>
+      <link>http://localhost:1313/projects/domains/</link>
+      <pubDate>Sun, 25 May 2025 21:42:23 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/projects/domains/</guid>
+      <description>How I Built an Automated Workflow to Hunt Trends &amp;amp; Launch Niche Websites # Staying ahead of trends and picking the right one to pursue can feel impossible without a dedicated team.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/domains/featured.jpg" />
+    </item>
+    
+  </channel>
+</rss>

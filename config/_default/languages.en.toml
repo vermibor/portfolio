@@ -1,0 +1,25 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Personal Projects Showcase"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "img/logo.png"
+description = ""
+copyright = "Copy right and left"
+
+[params.author]
+name = "Piotr Robak"
+email = "piotr@robak.org"
+image = "img/pr.jpeg"
+imageQuality = 96
+headline = "Things done automagically"
+
+#["params.author"]
+#image = "img/pr.jpeg"
+#name = ""

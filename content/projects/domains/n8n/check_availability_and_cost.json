@@ -1,0 +1,920 @@
+{
+  "name": "check availability and cost",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "domain"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1640,
+        160
+      ],
+      "id": "14573690-0ab1-4a2a-9e04-4d2b5aef563d",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        -420,
+        160
+      ],
+      "id": "7e47d9b8-2a34-406f-9d65-b093bc44fa14",
+      "name": "XML"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "32459975-ee4b-4f6c-8fdb-5a90b9aa4ec2",
+              "leftValue": "={{ $json.ApiResponse.Status }}",
+              "rightValue": "OK",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "788202ad-5ae4-4821-b02f-11bb55ae3975",
+              "leftValue": "={{ $json.ApiResponse.CommandResponse.DomainCheckResult.IsPremiumName }}",
+              "rightValue": "false",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "b264cc6a-f174-47a8-9aca-81098469f1bd",
+              "leftValue": "={{ $json.ApiResponse.CommandResponse.DomainCheckResult.Available }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -200,
+        160
+      ],
+      "id": "db8afe45-9673-4e31-9c5f-a85889a77792",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        420,
+        60
+      ],
+      "id": "2f510821-31c2-4fcd-930b-e4b94bebf96d",
+      "name": "XML2"
+    },
+    {
+      "parameters": {
+        "content": "Checking availability",
+        "height": 240,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -700,
+        100
+      ],
+      "id": "c1ea3420-1f43-4631-a6ce-4a2c8ca32f5a",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "getting pricing info for non-premium domains",
+        "height": 220,
+        "width": 360,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fec14ba8-7d6f-48f2-b069-c879da1c9c3a",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ",
+          "mode": "list",
+          "cachedResultName": "domains",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Arkusz1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "available": "N",
+            "domain": "={{ $json.ApiResponse.CommandResponse.DomainCheckResult.Domain }}"
+          },
+          "matchingColumns": [
+            "domain"
+          ],
+          "schema": [
+            {
+              "id": "keyword",
+              "displayName": "keyword",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "domain",
+              "displayName": "domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "trend score",
+              "displayName": "trend score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "fit score",
+              "displayName": "fit score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "available",
+              "displayName": "available",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "registration cost",
+              "displayName": "registration cost",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "min years",
+              "displayName": "min years",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "renewal cost",
+              "displayName": "renewal cost",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "expected value",
+              "displayName": "expected value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ROI",
+              "displayName": "ROI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "strategy",
+              "displayName": "strategy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        340,
+        520
+      ],
+      "id": "e70674dd-b678-4386-b139-33a130259f04",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "84eyVFV4GuUZly7z",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ",
+          "mode": "list",
+          "cachedResultName": "domains",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Arkusz1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1GN1Js6lLcsddZRz2315WvxCHunduR0KiDHzozq-GSxQ/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "available": "Y",
+            "min years": "={{ $json.ApiResponse.CommandResponse.UserGetPricingResult.ProductType.ProductCategory.Product.Price[0].Duration }}",
+            "registration cost": "={{ $json.ApiResponse.CommandResponse.UserGetPricingResult.ProductType.ProductCategory.Product.Price[0].YourPrice }}",
+            "renewal cost": "={{ $json.ApiResponse.CommandResponse.UserGetPricingResult.ProductType.ProductCategory.Product.Price[0].Price }}",
+            "domain": "={{ $('Edit Fields1').item.json.domain }}"
+          },
+          "matchingColumns": [
+            "domain"
+          ],
+          "schema": [
+            {
+              "id": "keyword",
+              "displayName": "keyword",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "domain",
+              "displayName": "domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "trend score",
+              "displayName": "trend score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "fit score",
+              "displayName": "fit score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "available",
+              "displayName": "available",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "registration cost",
+              "displayName": "registration cost",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "min years",
+              "displayName": "min years",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "renewal cost",
+              "displayName": "renewal cost",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "expected value",
+              "displayName": "expected value",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ROI",
+              "displayName": "ROI",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "strategy",
+              "displayName": "strategy",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        640,
+        60
+      ],
+      "id": "82ddb416-a6bd-47ea-835e-72750d5c26ac",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "84eyVFV4GuUZly7z",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1640,
+        380
+      ],
+      "id": "f31619bf-0bfb-465f-901a-18e54c075628",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2c323499-809b-419d-96b0-f6c66c7d928c",
+              "name": "domain",
+              "value": "={{ $ifEmpty($json.domain, \"test.com\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1160,
+        160
+      ],
+      "id": "f4278b08-638a-4583-8859-375f3fd3394c",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e315eff3-4dfa-44d6-90b7-4c121c8700c2",
+              "name": "available",
+              "value": "={{ $json.available }}",
+              "type": "string"
+            },
+            {
+              "id": "96a9383f-b23d-4e11-baaa-41b0925104de",
+              "name": "price",
+              "value": "={{ $json['registration cost'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        860,
+        60
+      ],
+      "id": "8da6d79f-8de5-46aa-a57f-37a2c24955cc",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6120ead8-a5b7-4310-acf0-5358759d5279",
+              "name": "available",
+              "value": "N",
+              "type": "string"
+            },
+            {
+              "id": "b7fde2c6-e6c0-43d0-8a09-7256210e6c53",
+              "name": "price",
+              "value": "99999",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        560,
+        520
+      ],
+      "id": "c38a189f-8602-4f12-9beb-b74c70bddc45",
+      "name": "Edit Fields3"
+    },
+    {
+      "parameters": {
+        "content": "Not available or premium domain\nkeep away from it",
+        "height": 240,
+        "width": 360,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        320,
+        440
+      ],
+      "typeVersion": 1,
+      "id": "4b0d78b2-e686-4074-a351-fafb98a9a9df",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "8af22006-4f14-4138-9c46-5664266f5e2b",
+              "leftValue": "={{ $json.ApiResponse.Status }}",
+              "rightValue": "ERROR",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        20,
+        260
+      ],
+      "id": "ab62c37d-e10b-4289-8449-af4969da11d2",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "errorMessage": "=API call failed: {{ $json.ApiResponse.Errors.Error._ }}"
+      },
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        320,
+        260
+      ],
+      "id": "c66b8404-54cd-4268-aca5-eca8bcaa5931",
+      "name": "Stop and Error"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.sandbox.namecheap.com/xml.response",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpCustomAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "Command",
+              "value": "namecheap.domains.check"
+            },
+            {
+              "name": "DomainList",
+              "value": "={{ $('Edit Fields1').item.json.domain }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -640,
+        160
+      ],
+      "id": "22e4bef8-ac5c-49a4-9aed-1f442fc2216e",
+      "name": "isAvailable?",
+      "credentials": {
+        "httpCustomAuth": {
+          "id": "RLA4tZGcbY483mXa",
+          "name": "Custom Auth NameCheap API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "=https://api.sandbox.namecheap.com/xml.response",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpCustomAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "Command",
+              "value": "namecheap.users.getPricing"
+            },
+            {
+              "name": "ProductType",
+              "value": "DOMAIN"
+            },
+            {
+              "name": "ProductCategory",
+              "value": "DOMAINS"
+            },
+            {
+              "name": "ActionName",
+              "value": "REGISTER"
+            },
+            {
+              "name": "ProductName",
+              "value": "={{ $('Edit Fields1').item.json.domain.split(\".\")[1].toUpperCase() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        140,
+        60
+      ],
+      "id": "9fa3c2b4-68eb-426b-81e9-2aa9fb4fbc6c",
+      "name": "getPricing",
+      "credentials": {
+        "httpCustomAuth": {
+          "id": "RLA4tZGcbY483mXa",
+          "name": "Custom Auth NameCheap API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## EXAMPLE ONLY: works in sandbox environment",
+        "height": 80,
+        "width": 2700,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1660,
+        -180
+      ],
+      "typeVersion": 1,
+      "id": "89405ef7-9a45-44a2-bd02-c28b5101757a",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "getPricing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML2": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "isAvailable?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "isAvailable?": {
+      "main": [
+        [
+          {
+            "node": "XML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getPricing": {
+      "main": [
+        [
+          {
+            "node": "XML2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "41f33b4d-1e20-4445-8445-1e297dee4ed7",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ad40adec569e15004ae6dc5cabbb87e8497c456c1b4ed9229780cd08a14f93a2"
+  },
+  "id": "jwPbzxhSNqs6iGIt",
+  "tags": [
+    {
+      "createdAt": "2025-04-09T18:31:32.951Z",
+      "updatedAt": "2025-04-09T18:31:32.951Z",
+      "id": "At8yHoHPgHxzPg79",
+      "name": "new domain"
+    }
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "name": "keyword classifier",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "keyword"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1000,
+        440
+      ],
+      "id": "6ba14ad0-a016-4ee1-ba27-d1baa38e0635",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1rMrllCzGP70xiVzFhNEb_XZ_sIVw3qZ1rmc4e8RI8Fg",
+          "mode": "list",
+          "cachedResultName": "trends",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rMrllCzGP70xiVzFhNEb_XZ_sIVw3qZ1rmc4e8RI8Fg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 189663263,
+          "mode": "list",
+          "cachedResultName": "main",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rMrllCzGP70xiVzFhNEb_XZ_sIVw3qZ1rmc4e8RI8Fg/edit#gid=189663263"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "keyword",
+              "lookupValue": "={{ $json.keyword }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -680,
+        440
+      ],
+      "id": "ed6aebc2-7fb5-49d2-8246-bd07299a5099",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "84eyVFV4GuUZly7z",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c0d6fb57-2f67-4447-a7de-72a80212c2f8",
+              "leftValue": "={{ $json.category }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -480,
+        440
+      ],
+      "id": "8565b242-3fbe-4daa-8ea7-f8894b196f42",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "0c76b7cf-2229-4f1c-a8f4-d9c86c3d5412",
+              "name": "category",
+              "value": "={{ $json.category }}",
+              "type": "string"
+            },
+            {
+              "id": "a4021801-2c2c-4a3a-ba16-75144bfad145",
+              "name": "trend score",
+              "value": "={{ $json['trend score'] }}",
+              "type": "string"
+            },
+            {
+              "id": "d59ba19f-8801-478c-b53d-47beea976c80",
+              "name": "keyword",
+              "value": "={{ $json.keyword }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -40,
+        900
+      ],
+      "id": "07cf8502-a14f-4617-9bc8-391e115876a3",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        200
+      ],
+      "id": "8c78d1ee-b547-4787-a7e5-71bba3f842cd",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "qUsMQk2UkySnDBhs",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"category\": \"Sport\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        200
+      ],
+      "id": "481a85c7-b830-484d-b0ad-5612a02dd2dd",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1rMrllCzGP70xiVzFhNEb_XZ_sIVw3qZ1rmc4e8RI8Fg",
+          "mode": "list",
+          "cachedResultName": "trends",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rMrllCzGP70xiVzFhNEb_XZ_sIVw3qZ1rmc4e8RI8Fg/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 189663263,
+          "mode": "list",
+          "cachedResultName": "main",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rMrllCzGP70xiVzFhNEb_XZ_sIVw3qZ1rmc4e8RI8Fg/edit#gid=189663263"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('If').item.json.row_number }}",
+            "category": "={{ $json.output.category }}",
+            "trend score": "={{ $json.output.score }}"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "keyword",
+              "displayName": "keyword",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "aa",
+              "displayName": "aa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "3m trend",
+              "displayName": "3m trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "6m trend",
+              "displayName": "6m trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "1y trend",
+              "displayName": "1y trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "2y trend",
+              "displayName": "2y trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "3y trend",
+              "displayName": "3y trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "zero-weeks",
+              "displayName": "zero-weeks",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "used",
+              "displayName": "used",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Volume",
+              "displayName": "Volume",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Trend",
+              "displayName": "Trend",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Growth",
+              "displayName": "Growth",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Description",
+              "displayName": "Description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "category",
+              "displayName": "category",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "trend score",
+              "displayName": "trend score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        720,
+        240
+      ],
+      "id": "aaf5986c-89d1-4778-8f09-a1f46012a9a1",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "84eyVFV4GuUZly7z",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"score\": 8\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        180,
+        580
+      ],
+      "id": "f9249024-03ca-4fee-9c5c-fbac5e515c1c",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.2,
+      "position": [
+        -20,
+        560
+      ],
+      "id": "e1e9a4b1-70a7-4056-9b27-8ac0f5432865",
+      "name": "Anthropic Chat Model",
+      "credentials": {
+        "anthropicApi": {
+          "id": "JRU7Tp2pzzKIKImy",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3,
+      "position": [
+        500,
+        240
+      ],
+      "id": "54e896fb-a421-4220-9261-1a981fa1c796",
+      "name": "Merge",
+      "alwaysOutputData": false,
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Classify below description to one of categories:\n  Company - existing company or startup\n  Brand - brand which is protected by trademark\n  Event - one off. Something that has little chances for re-appearing\n  SaaS - new service that can be bult online\n  Online - blog, portal or tool that can be build online\n  Product - physical product that needs to be manufactured\n  Social - social media trend or behavior \n  Art - popular artist, singer or painter\n  Sport - sport related\n  Other - something that does not fit any of above categories\n\n\nDescription:\n{{ $json.Description }}",
+        "hasOutputParser": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        0
+      ],
+      "id": "359af7a3-f1db-4ff9-96ce-849d2f9b2d70",
+      "name": "Keywords classifier"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Assign a 0-10 score that would indicate a trend strength.\n\nRules:\n3m trend - relative increase in search volume in last 3 months. More = better\n6m trend - relative increase in search volume in last 6 months. More = better\n1y trend - relative increase in search volume in last year. More = better\n2y trend - relative increase in search volume in last 2 years. More = better\n3y trend - relative increase in search volume in last 3 years. More = better\nzero-weeks - number of weeks when search volume was zero. Less = better\nVolume - nominal value of latest searches. More = better\nTrend - descriptive definition of trend. 'exploding' is best, then 'regular'\nGrowth - volume increase in last 2 years. More = better\n\nInput:\n3m trend: {{ $json['3m trend'] }}\n6m trend: {{ $json['6m trend'] }}\n1y trend: {{ $json['1y trend'] }}\n2y trend: {{ $json['2y trend'] }}\n3y trend: {{ $json['3y trend'] }}\nzero-weeks: {{ $json['zero-weeks'] }}\nVolume: {{ $json.Volume }}\nGrowth: {{ $json.Growth }}",
+        "hasOutputParser": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        380
+      ],
+      "id": "fb2ac68d-e510-4cdc-a69f-391311afe6ee",
+      "name": "Trend score"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Keywords classifier",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Trend score",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Keywords classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Keywords classifier",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "main": [
+        []
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Trend score",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Trend score",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Keywords classifier": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trend score": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "27a0344d-5081-4d78-b226-dd9c47709506",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ad40adec569e15004ae6dc5cabbb87e8497c456c1b4ed9229780cd08a14f93a2"
+  },
+  "id": "DRxAfeuoAFVaWCxA",
+  "tags": [
+    {
+      "createdAt": "2025-04-09T18:31:32.951Z",
+      "updatedAt": "2025-04-09T18:31:32.951Z",
+      "id": "At8yHoHPgHxzPg79",
+      "name": "new domain"
+    }
+  ]
+}
