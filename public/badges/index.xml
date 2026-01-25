@@ -9,14 +9,44 @@
     <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
     <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
     <copyright>Copy right and left</copyright>
-    <lastBuildDate>Sun, 07 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/badges/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/badges/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Agents</title>
+      <link>http://localhost:1313/badges/agents/</link>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/agents/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>AI</title>
       <link>http://localhost:1313/badges/ai/</link>
-      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
       <guid>http://localhost:1313/badges/ai/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/badges/api/</link>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/api/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Weekend Project</title>
+      <link>http://localhost:1313/badges/weekend-project/</link>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/badges/weekend-project/</guid>
       <description></description>
       
     </item>
@@ -37,16 +67,6 @@
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
       <guid>http://localhost:1313/badges/n8n/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Weekend-Project</title>
-      <link>http://localhost:1313/badges/weekend-project/</link>
-      <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/badges/weekend-project/</guid>
       <description></description>
       
     </item>
@@ -97,26 +117,6 @@
       <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
       <guid>http://localhost:1313/badges/rpi/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Agents</title>
-      <link>http://localhost:1313/badges/agents/</link>
-      <pubDate>Sun, 25 May 2025 21:42:23 +0200</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/badges/agents/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>API</title>
-      <link>http://localhost:1313/badges/api/</link>
-      <pubDate>Sun, 25 May 2025 21:42:23 +0200</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/badges/api/</guid>
       <description></description>
       
     </item>

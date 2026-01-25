@@ -12,6 +12,16 @@
     <lastBuildDate>Sat, 24 May 2025 22:28:44 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>The noBait Experiment</title>
+      <link>http://localhost:1313/projects/nobait/</link>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>http://localhost:1313/projects/nobait/</guid>
+      <description>I’ve spent the last week seeing exactly how much heavy lifting I could offload to an AI.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/nobait/featured.jpg" />
+    </item>
+    
+    <item>
       <title>AI Concierge</title>
       <link>http://localhost:1313/projects/ai-concierge/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
