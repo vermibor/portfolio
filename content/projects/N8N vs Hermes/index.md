@@ -1,14 +1,13 @@
 ---
-title: "Is n8n Dead in 2026? Why Deterministic Workflows Still Matter in the Age of Autonomous Agents"
-date: 2026-10-17T20:35:00+02:00
+title: "N8N vs Hermes: 2026 battle"
+date: 2026-10-17
 draft: false
-tags: ["n8n", "AI Agents", "Hermes", "OpenClaw", "Claude Code", "Automation", "Backend"]
-categories: ["AI & Automation", "Tech Thoughts"]
+badges: ["n8n", "Agents", "automation"]
 description: "With the explosion of autonomous AI agents like OpenClaw, Hermes, and Claude Code, many are asking if visual automation tools like n8n are obsolete. Here is what the internet says—and how I actually split the work between n8n and Hermes in my daily stack."
 readingTime: 4
 ---
 
-If you spend enough time on tech YouTube or scrolling through developer threads lately, you’ve probably seen the dramatic headlines: *"Is n8n Dead in 2026?"* 
+N8N - my favorite tool has a lot of competition lately. If you spend enough time on tech YouTube or scrolling through developer threads lately, you’ve probably seen the dramatic headlines: *"Is n8n Dead in 2026?"* 
 
 With the rapid rise of autonomous AI agents and terminal-native powerhouses like **OpenClaw**, **Hermes**, **Claude Code**, and **Codex**, a loud narrative has emerged. Why spend time dragging and dropping nodes on a visual canvas when you can simply instruct an agent in plain English to write the code, execute shell commands, and handle the task on its own?
 
@@ -53,7 +52,9 @@ Let’s also not forget the basics: n8n shines at simple, straightforward proced
 
 Saying n8n is alive and well doesn’t mean the landscape hasn't shifted. Default AI agents like **OpenClaw** and **Claude Code** have legitimately taken over a huge chunk of tasks that people used to force into n8n a year or two ago.
 
-Personally, **Hermes** has become my go-to AI agent. Working with both tools has taught me a crucial lesson: **not every task should go to the same execution engine.**
+Personally, I use **N8N**, **Antigravity CLI** and **Hermes**. Working with those tools has taught me a crucial lesson: **not every task should go to the same execution engine.** 
+
+**Antigravity** is for coding. Should I update the code, create new test cases, add feature, proceed to next epoch from the backlog .. those are best tasks for Google's tool.
 
 I route tasks to **Hermes** when the goal is *open-ended*—specifically when there are no strictly defined input and output criteria. Hermes takes the wheel when:
 
