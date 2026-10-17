@@ -62,7 +62,7 @@ Visit this page again soon - the most interesting stuff will be uploaded here.
 
 ### Update
 
-Project has turned into something much bigger. Or at least some core part of this. Check out soon for details.
+I have decided to shut down this project after all. But it eventually has inspired me to build something much bigger. Or at least some core part of this. Check out soon for details.
 
 ---
 

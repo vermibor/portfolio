@@ -12,6 +12,16 @@
     <lastBuildDate>Sat, 24 May 2025 22:28:44 +0200</lastBuildDate><atom:link href="https://robak.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Bitcoin Wheel Strategy</title>
+      <link>https://robak.org/projects/wheel/</link>
+      <pubDate>Thu, 10 Sep 2026 19:30:00 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>https://robak.org/projects/wheel/</guid>
+      <description>For the past two months, a small script has been running on my old laptop.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/wheel/featured.jpeg" />
+    </item>
+    
+    <item>
       <title>Bob the (AI) Builder</title>
       <link>https://robak.org/projects/summerhouse/</link>
       <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
@@ -49,16 +59,6 @@
       <guid>https://robak.org/projects/vibecoding/</guid>
       <description>Building a Crypto Correlation Explorer with Vibe Coding # How it started # I wanted to visualize cryptocurrency relationships, so I spent an afternoon vibe coding to see how far I could get.</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/vibecoding/featured.jpg" />
-    </item>
-    
-    <item>
-      <title>Smarthome</title>
-      <link>https://robak.org/projects/smarthome/</link>
-      <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>https://robak.org/projects/smarthome/</guid>
-      <description>What can I do with my unused Raspberry Pi that previously worked as retro game console, NAS server and Kodi media center?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/smarthome/featured.jpg" />
     </item>
     
     <item>

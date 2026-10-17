@@ -59,7 +59,7 @@ The roadmap is exciting:
 ## Quick update:
 
 After spending one more evening on my application it now has a strategy builder module. You can test how a market-neutral strategy performs depending on various parameters. You can also use AI-driven helper!
-I still have a few issues to solve: speed is one of those. When you click 'Simulate' - give yourself a break, make a coffee, call a friend or watch next episode of your favourite show.
+I still have a few issues to solve: speed is one of those. When you click 'Simulate' - give yourself a break, make a coffee, call a friend or watch next episode of your favorite show.
 It's been published under 3 domains:
 
 [cryptopair.xyz](http://cryptopair.xyz/)
@@ -68,3 +68,10 @@ It's been published under 3 domains:
 
 [cryptocorrelations.xyz](http://cryptocorrelations.xyz/)
 
+## Quick update 2:
+
+179 - this is the final number of unique users that used my crypto correlation matrix. Several of them used it periodically. They  represented 12 different countries such as US, China, Germany, Brazil and UK. No one has subscribed to a newsletter. There was no interest in additional service (I did a smoke test in the background too).
+
+For a tool like this, even with zero budget and effort for advertisement - I still expected a few hundreds of viewers and at least 5-10 signs of interest for payed content. Well, a good lesson learned for future.
+
+Either way - all 3 domains are now available for registration so if you would like to continue this journey, please do so and let me know how it worked for you.

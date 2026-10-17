@@ -9,7 +9,57 @@
     <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
     <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
     <copyright>Copy right and left</copyright>
-    <lastBuildDate>Mon, 20 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://robak.org/badges/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Sep 2026 19:30:00 +0200</lastBuildDate><atom:link href="https://robak.org/badges/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Algotrading</title>
+      <link>https://robak.org/badges/algotrading/</link>
+      <pubDate>Thu, 10 Sep 2026 19:30:00 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>https://robak.org/badges/algotrading/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>API</title>
+      <link>https://robak.org/badges/api/</link>
+      <pubDate>Thu, 10 Sep 2026 19:30:00 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>https://robak.org/badges/api/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Crypto</title>
+      <link>https://robak.org/badges/crypto/</link>
+      <pubDate>Thu, 10 Sep 2026 19:30:00 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>https://robak.org/badges/crypto/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://robak.org/badges/python/</link>
+      <pubDate>Thu, 10 Sep 2026 19:30:00 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>https://robak.org/badges/python/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Weekend Project</title>
+      <link>https://robak.org/badges/weekend-project/</link>
+      <pubDate>Thu, 10 Sep 2026 19:30:00 +0200</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>https://robak.org/badges/weekend-project/</guid>
+      <description></description>
+      
+    </item>
     
     <item>
       <title>AI</title>
@@ -62,26 +112,6 @@
     </item>
     
     <item>
-      <title>API</title>
-      <link>https://robak.org/badges/api/</link>
-      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>https://robak.org/badges/api/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Weekend Project</title>
-      <link>https://robak.org/badges/weekend-project/</link>
-      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>https://robak.org/badges/weekend-project/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Automation</title>
       <link>https://robak.org/badges/automation/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
@@ -92,51 +122,11 @@
     </item>
     
     <item>
-      <title>Crypto</title>
-      <link>https://robak.org/badges/crypto/</link>
-      <pubDate>Sun, 25 May 2025 21:42:53 +0200</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>https://robak.org/badges/crypto/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Simple</title>
       <link>https://robak.org/badges/simple/</link>
       <pubDate>Sun, 25 May 2025 21:42:53 +0200</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
       <guid>https://robak.org/badges/simple/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>DIY</title>
-      <link>https://robak.org/badges/diy/</link>
-      <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>https://robak.org/badges/diy/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>IoT</title>
-      <link>https://robak.org/badges/iot/</link>
-      <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>https://robak.org/badges/iot/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>RPi</title>
-      <link>https://robak.org/badges/rpi/</link>
-      <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
-      <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>https://robak.org/badges/rpi/</guid>
       <description></description>
       
     </item>

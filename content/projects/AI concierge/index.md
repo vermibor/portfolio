@@ -2,7 +2,7 @@
 title = 'AI Concierge'
 date = 2025-12-07
 draft = false
-badges = ["n8n", "AI", "weekend-project", "automation"]
+badges = ["n8n", "AI", "weekend project", "automation"]
 featureimage = "featured.jpg"
 heroStyle = "background"
 +++
