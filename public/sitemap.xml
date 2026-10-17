@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://robak.org/projects/wheel/</loc>
-    <lastmod>2026-09-10T19:30:00+02:00</lastmod>
+    <loc>https://robak.org/projects/n8n-vs-hermes/</loc>
+    <lastmod>2026-10-17T20:35:00+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://robak.org/projects/</loc>
+    <lastmod>2026-10-17T20:35:00+02:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://robak.org/projects/wheel/</loc>
     <lastmod>2026-09-10T19:30:00+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
