@@ -3,49 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://robak.org/projects/summerhouse/</loc>
+    <lastmod>2026-04-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://robak.org/projects/</loc>
+    <lastmod>2026-04-20T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://robak.org/projects/nobait/</loc>
     <lastmod>2026-01-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/nobait/</loc>
-    <lastmod>2026-01-06T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/projects/ai-concierge/</loc>
+    <loc>https://robak.org/projects/ai-concierge/</loc>
     <lastmod>2025-12-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/vibecoding/</loc>
+    <loc>https://robak.org/projects/vibecoding/</loc>
     <lastmod>2025-05-25T21:42:53+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/smarthome/</loc>
+    <loc>https://robak.org/projects/smarthome/</loc>
     <lastmod>2025-05-25T21:42:38+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/projects/domains/</loc>
+    <loc>https://robak.org/projects/domains/</loc>
     <lastmod>2025-05-25T21:42:23+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://robak.org/about/</loc>
     <lastmod>2025-05-24T22:34:18+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://robak.org/</loc>
     <lastmod>2025-05-24T22:28:44+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

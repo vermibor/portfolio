@@ -2,71 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homepage on Personal Projects Showcase</title>
-    <link>http://localhost:1313/</link>
+    <link>https://robak.org/</link>
     <description>Recent content in Homepage on Personal Projects Showcase</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
     <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
     <copyright>Copy right and left</copyright>
-    <lastBuildDate>Sat, 24 May 2025 22:28:44 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 May 2025 22:28:44 +0200</lastBuildDate><atom:link href="https://robak.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bob the (AI) Builder</title>
+      <link>https://robak.org/projects/summerhouse/</link>
+      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
+      <author>piotr@robak.org (Piotr Robak)</author>
+      <guid>https://robak.org/projects/summerhouse/</guid>
+      <description>I&amp;rsquo;m currently building a summer house at the seaside.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/summerhouse/featured.jpg" />
+    </item>
     
     <item>
       <title>The noBait Experiment</title>
-      <link>http://localhost:1313/projects/nobait/</link>
+      <link>https://robak.org/projects/nobait/</link>
       <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/projects/nobait/</guid>
+      <guid>https://robak.org/projects/nobait/</guid>
       <description>I’ve spent the last week seeing exactly how much heavy lifting I could offload to an AI.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/nobait/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/nobait/featured.jpg" />
     </item>
     
     <item>
       <title>AI Concierge</title>
-      <link>http://localhost:1313/projects/ai-concierge/</link>
+      <link>https://robak.org/projects/ai-concierge/</link>
       <pubDate>Sun, 07 Dec 2025 00:00:00 +0000</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/projects/ai-concierge/</guid>
+      <guid>https://robak.org/projects/ai-concierge/</guid>
       <description>So here&amp;rsquo;s a problem I never thought I&amp;rsquo;d automate away: figuring out what to do on weekends.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/ai-concierge/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/ai-concierge/featured.jpg" />
     </item>
     
     <item>
       <title>Vibecoding</title>
-      <link>http://localhost:1313/projects/vibecoding/</link>
+      <link>https://robak.org/projects/vibecoding/</link>
       <pubDate>Sun, 25 May 2025 21:42:53 +0200</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/projects/vibecoding/</guid>
-      <description>🚀 My Journey into Vibe Coding: Building a Crypto Correlation Explorer # The Spark 💡 # Sometimes the best projects start with a simple question and an afternoon of pure coding flow.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/vibecoding/featured.jpg" />
+      <guid>https://robak.org/projects/vibecoding/</guid>
+      <description>Building a Crypto Correlation Explorer with Vibe Coding # How it started # I wanted to visualize cryptocurrency relationships, so I spent an afternoon vibe coding to see how far I could get.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/vibecoding/featured.jpg" />
     </item>
     
     <item>
       <title>Smarthome</title>
-      <link>http://localhost:1313/projects/smarthome/</link>
+      <link>https://robak.org/projects/smarthome/</link>
       <pubDate>Sun, 25 May 2025 21:42:38 +0200</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/projects/smarthome/</guid>
+      <guid>https://robak.org/projects/smarthome/</guid>
       <description>What can I do with my unused Raspberry Pi that previously worked as retro game console, NAS server and Kodi media center?</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/smarthome/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/smarthome/featured.jpg" />
     </item>
     
     <item>
       <title>AI Domain Advisor</title>
-      <link>http://localhost:1313/projects/domains/</link>
+      <link>https://robak.org/projects/domains/</link>
       <pubDate>Sun, 25 May 2025 21:42:23 +0200</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/projects/domains/</guid>
-      <description>How I Built an Automated Workflow to Hunt Trends &amp;amp; Launch Niche Websites # Staying ahead of trends and picking the right one to pursue can feel impossible without a dedicated team.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/domains/featured.jpg" />
+      <guid>https://robak.org/projects/domains/</guid>
+      <description>How I Built an Automated Workflow to Hunt Trends &amp;amp; Launch Niche Websites # Staying ahead of trends and picking the right one to pursue usually takes a lot of manual research.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/domains/featured.jpg" />
     </item>
     
     <item>
       <title>Something about me</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://robak.org/about/</link>
       <pubDate>Sat, 24 May 2025 22:34:18 +0200</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://robak.org/about/</guid>
       <description>Hello! I&amp;rsquo;m a hobbyist exploring the fascinating world of Artificial Intelligence and DIY tech during my afterhours.</description>
       
     </item>

@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API on Personal Projects Showcase</title>
-    <link>http://localhost:1313/badges/api/</link>
+    <link>https://robak.org/badges/api/</link>
     <description>Recent content in API on Personal Projects Showcase</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>piotr@robak.org (Piotr Robak)</managingEditor>
     <webMaster>piotr@robak.org (Piotr Robak)</webMaster>
     <copyright>Copy right and left</copyright>
-    <lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/badges/api/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://robak.org/badges/api/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The noBait Experiment</title>
-      <link>http://localhost:1313/projects/nobait/</link>
+      <link>https://robak.org/projects/nobait/</link>
       <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/projects/nobait/</guid>
+      <guid>https://robak.org/projects/nobait/</guid>
       <description>I’ve spent the last week seeing exactly how much heavy lifting I could offload to an AI.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/nobait/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/nobait/featured.jpg" />
     </item>
     
     <item>
       <title>AI Domain Advisor</title>
-      <link>http://localhost:1313/projects/domains/</link>
+      <link>https://robak.org/projects/domains/</link>
       <pubDate>Sun, 25 May 2025 21:42:23 +0200</pubDate>
       <author>piotr@robak.org (Piotr Robak)</author>
-      <guid>http://localhost:1313/projects/domains/</guid>
-      <description>How I Built an Automated Workflow to Hunt Trends &amp;amp; Launch Niche Websites # Staying ahead of trends and picking the right one to pursue can feel impossible without a dedicated team.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/projects/domains/featured.jpg" />
+      <guid>https://robak.org/projects/domains/</guid>
+      <description>How I Built an Automated Workflow to Hunt Trends &amp;amp; Launch Niche Websites # Staying ahead of trends and picking the right one to pursue usually takes a lot of manual research.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://robak.org/projects/domains/featured.jpg" />
     </item>
     
   </channel>

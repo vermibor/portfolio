@@ -6,15 +6,13 @@ featureimage = "featured.jpg"
 badges = ["AI", "Crypto", "Simple"]
 +++
 
-# 🚀 My Journey into Vibe Coding: Building a Crypto Correlation Explorer
+# Building a Crypto Correlation Explorer with Vibe Coding
 
-## The Spark 💡
+## How it started
 
-Sometimes the best projects start with a simple question and an afternoon of pure coding flow. That's exactly how my latest venture into **vibe coding** began - that magical state where curiosity meets creativity, and before you know it, you're knee-deep in building something genuinely exciting.
+I wanted to visualize cryptocurrency relationships, so I spent an afternoon vibe coding to see how far I could get. I've been interested in how different tokens correlate and move together, and building an interactive explorer seemed like a good way to figure it out.
 
-## The Project: Crypto Correlation Visualization 📊
-
-I decided to dive into the fascinating world of cryptocurrency relationships. My goal? Create an interactive application that visualizes correlations between different tokens and uncovers the hidden patterns in crypto market movements.
+## The Project: Crypto Correlation Visualization
 
 ### What I Built
 
@@ -30,7 +28,7 @@ Do you want to see results? **[Check it out!](https://crypto-correlation-explore
 {{< /alert >}}
 
 
-## The Technical Deep Dive 🔬
+## Technical Details
 
 The statistical foundation includes:
 
@@ -40,19 +38,15 @@ The statistical foundation includes:
 
 These statistical tools are crucial for understanding whether crypto pairs represent a true relationship - essential knowledge for any serious trading strategy.
 
-## The Vision: Beyond Visualization 🎯
+## Future Plans
 
 This isn't just another data visualization project. I'm building toward something bigger: a **full-scale trading platform** focused on market-neutral strategies like pair trading. 
 
 Imagine identifying crypto pairs that historically move together, then capitalizing on temporary divergences through sophisticated algorithmic trading. That's the endgame.
 
-## Why Vibe Coding Works ✨
+## Why vibe coding worked here
 
-This project perfectly captures what vibe coding is all about:
-- **Following curiosity** rather than rigid planning
-- **Building iteratively** from simple visualizations to complex systems 
-- **Letting the data guide** the development process
-- **Staying open** to where the project naturally evolves
+For this project, vibe coding meant skipping heavy upfront planning and just following the data. I started with simple visualizations and let the tool evolve naturally as I noticed interesting correlation patterns.
 
 ## What's Next?
 
@@ -74,8 +68,3 @@ It's been published under 3 domains:
 
 [cryptocorrelations.xyz](http://cryptocorrelations.xyz/)
 
----
-
-*Sometimes the best way to learn is to just start building. This crypto correlation explorer started as a weekend experiment and is growing into something that may be actually helpful in my adventure with crypto. That's the power of vibe coding - you never know where the journey will take you.*
-
-**Ready to start your own vibe coding adventure? Pick a dataset that fascinates you and just start exploring. The insights will follow.**

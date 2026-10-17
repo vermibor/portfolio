@@ -8,7 +8,7 @@ heroStyle = "background"
 +++
 # How I Built an Automated Workflow to Hunt Trends & Launch Niche Websites
 
-Staying ahead of trends and picking the *right* one to pursue can feel impossible without a dedicated team. So, I built a system that does almost everything **automatically** - and it’s been quite a ride!
+Staying ahead of trends and picking the right one to pursue usually takes a lot of manual research. To fix this, I built an automated system that handles the heavy lifting for me.
 
 ## What I Created
 
@@ -44,14 +44,14 @@ This automation lets me launch new niche sites lightning-fast, freeing up time t
 | Database Search      | Pinecone                          |
 | Domain & Hosting Setup | NameCheap + cPanel APIs          |
 
-## The AI Squad Behind the Scenes
+## AI Models Used
 
 - **Gemini 2.5**
 - **ChatGPT 4.0 mini and 4.1 mini**
 - **DeepSeek R1**
 - **Claude Sonnet 3.5**
 
-Each AI model plays a unique role - from data analysis to content generation and strategic decisions.
+I use a mix of models depending on the task—some are better at structuring data, while others handle summarization or strategic weighting.
 
 ---
 
@@ -60,13 +60,11 @@ Each AI model plays a unique role - from data analysis to content generation and
 Visit this page again soon - the most interesting stuff will be uploaded here.
 
 
-<!-- Placeholder for audit log or dynamic embed -->
+### Update
+
+Project has turned into something much bigger. Or at least some core part of this. Check out soon for details.
 
 ---
 
 Want to know more about how this works or get insights on automating your own projects? Feel free to reach out or follow along as I refine this process!
-
----
-
-*Ready to automate your niche website creation? Let's build smarter, not harder.*
 
