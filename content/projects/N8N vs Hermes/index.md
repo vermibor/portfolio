@@ -1,5 +1,5 @@
 ---
-title: "N8N vs Hermes: 2026 battle"
+title: "N8N vs AI agents: 2026 battle"
 date: 2026-10-17
 draft: false
 badges: ["n8n", "Agents", "automation"]
