@@ -1,0 +1,8 @@
+
+# Klucze SSH
+ssh/
+.ssh/
+*id_rsa*
+*id_ed25519*
+*.pem
+*.key
